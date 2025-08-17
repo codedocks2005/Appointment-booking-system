@@ -1,0 +1,246 @@
+
+
+body{
+    margin: auto;
+    font-family: sans-serif;
+}
+.nav{
+    
+    background-color: #030303;
+    width: 1425;
+    height: 80px;
+
+    display: flex;
+     margin-top: -20px;
+    align-items: center;
+    justify-content: flex-start;
+
+   
+}
+img{
+    justify-content: flex-start;
+    margin-top: -10px;
+    margin-left: 20px;
+    height:100px;
+    width:125px;
+}
+ 
+.nav p {
+  color: white;
+    font-size: 16px;
+    background-color: aqua;
+
+    
+margin: 0;
+  
+    padding: 10px 60px;
+    
+
+}
+
+.nav button{                          /* Navbar buttons */    
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    box-shadow: none;
+    border: none;
+    font-size: 20px;
+
+     
+    padding-right: 20px;
+}
+#home{
+    margin-left: 600px;
+    
+    }
+
+    #mainbox1{
+     height: 720px;
+     width: 341px;
+     background-color: #efefef;
+     border-radius: 15px;
+     margin-top: 20px;
+     margin-left: 20px;
+     font-family: sans-serif;
+    }
+
+    #mainbox2{
+        height: 500px;
+        width: 633px;
+        background-color: #efefef;
+        border-radius: 15px;
+        margin-left: 380px;
+        margin-top: -735px;
+    }
+
+    #mainbox3{
+        height: 180px;
+        width: 633px;
+        background-color: #efefef;
+        border-radius: 15px;
+        margin-left: 380px;
+        margin-top: 30px;
+
+
+    }
+
+    #mainbox4{
+        height: 720px;
+     width: 341px;
+        background-color: #efefef;
+        border-radius: 15px;
+        margin-left: 1050px;
+        margin-top: -730px;
+        align-items: center;
+
+
+
+    }
+
+    #confirm-button{
+        background-color: white;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 30px;
+        
+
+    }
+
+    #confirm{
+        font-size: 20px;
+        margin-top: 20px;
+        border-radius: 15px;
+        font-weight: 400;
+        background-color: black;
+        color: white;
+        height: 40px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    #confirm:hover{
+        background-color: white;
+        color: black;
+        transform: scale(1.1); /* Increases size */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds shadow */
+        
+    }
+
+    #foot-box{
+        margin-top: 50px;
+        height: 72px;
+        width: 1425px;
+        background-color: black;
+        color: #efefef;
+       
+    }
+
+    #copyright{
+        margin-left: 50px;
+        padding-top: 25px;
+    }
+    h2{
+        margin-left: 20px;
+        padding-top: 20px;
+    }
+    
+    #mainbox1 label {
+        font-size: 25px; /* Adjust size as needed */
+        margin-left: 20px;
+        font-weight: 200px;
+       margin-bottom: 20px;
+       display: block;
+    }
+
+    #mainbox1 input[type="radio"] {
+        width: 20px; /* Size of the radio button */
+        height: 20px;
+        accent-color: grey; /* Change color (for modern browsers) */
+        margin-right: 10px; /* Space between button and text */
+    }
+
+    #mainbox1 input[type="radio"]:hover {
+     transform: scale(1.1); /* Increases size */
+        box-shadow: 0 4px 10px black; /* Adds shadow */
+    }
+
+    
+  #calendar {
+    max-width: 600px; /* Reduce calendar width */
+    margin: 0 auto; /* Center the calendar */
+    background-color: black; /* Light background color */
+    border: 1px solid #ddd; /* Border around the calendar */
+    border-radius: 10px; /* Rounded edges */
+    padding: 10px;
+  }
+
+  .fc-toolbar {
+    background-color: grey; /* Change toolbar background color */
+    color: white; /* Toolbar text color */
+    border-radius: 8px;
+  }
+
+  .fc-daygrid-day {
+    background-color: #fff; /* Background for days */
+  }
+
+  .fc-day-today {
+    background-color: #ffefc1 !important; /* Highlight today's date */
+  }
+
+  .fc-day:hover {
+    background-color: #d3f9d8; /* Hover effect for days */
+  }
+
+  #time{
+    height: 30px;
+    width: 500px;
+    border-radius: 10px;
+    margin-left: 50px;
+    background-color: grey;
+  }
+
+  .optionss{
+       display: flex;
+    flex-direction: column;
+       align-items: flex-start;
+       gap: 10px;
+      margin-left: 40px;
+  }
+
+  #options1{
+    background-color: #efefef;
+    height: 40px;
+    width: 250px;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+  }
+  #options2{
+    background-color: #efefef;
+    height: 40px;
+    width: 250px;
+    margin-top: 20px;
+    font-size: larger;
+  }
+  #options3{
+    background-color: #efefef;
+    height: 40px;
+    width: 250px;
+    margin-top: 20px;
+    font-size: larger;
+  }
+  #options4{
+    background-color: #efefef;
+    height: 40px;
+    width: 250px;
+    margin-top: 20px;
+    font-size: larger;
+  }
+  
+
+    
+  
+    

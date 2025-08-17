@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="booking.xsl"?>
+<appointments xmlns="http://www.example.com/appointments">
+    <appointment id="A001">
+        <customerId>C001</customerId>
+        <serviceId>S001</serviceId>
+        <appointmentDate>2025-01-20</appointmentDate>
+        <appointmentTime>10:00</appointmentTime>
+        <status>Confirmed</status>
+    </appointment>
+    <appointment id="A002">
+        <customerId>C002</customerId>
+        <serviceId>S002</serviceId>
+        <appointmentDate>2025-01-21</appointmentDate>
+        <appointmentTime>11:00</appointmentTime>
+        <status>Pending</status>
+    </appointment>
+    <appointment id="A003">
+        <customerId>C003</customerId>
+        <serviceId>S003</serviceId>
+        <appointmentDate>2025-01-22</appointmentDate>
+        <appointmentTime>14:30</appointmentTime>
+        <status>Confirmed</status>
+    </appointment>
+</appointments>

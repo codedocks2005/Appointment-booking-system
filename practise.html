@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body{
+            align-items:center ;
+            justify-content: center;
+            display: flex;
+        }
+
+        #main-box{
+            background-color: #efefef;
+            height: 500px;
+            width: 425px;
+            border-color: #e7e5eb;
+            border-radius: 25px;
+            margin-top: 100px;
+            margin-right: 50px;
+            opacity: 0;
+            animation: popUp 1s ease-out forwards; /* Add animation */
+        }
+
+        #name{
+            margin-left: 110px;
+            margin-top: 40px;
+            font-weight: 500;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 40px;
+        }
+
+        #login{
+            margin-left: 155px;
+            margin-top: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+        }
+
+        #username{
+            background-color: #efefef;
+            color: #94a3b8;
+            width: 304px;
+            height: 45px;
+            border-radius: 10px;
+            margin-left: 55px;
+            font-size: 15px;
+        }
+
+        #password{
+            background-color: #efefef;
+            color: #94a3b8;
+            width: 304px;
+            height: 45px;
+            border-radius: 10px;
+            margin-left: 55px;
+            margin-top: 30px;
+            font-size: 15px;
+        }
+
+        #username:hover{
+            background-color: #e2e8f0;
+        }
+
+        #password:hover{
+            background-color:#e2e8f0;
+        }
+
+        #login-btn{
+            background-color: black;
+            color: #fff;
+            width: 304px;
+            height: 45px;
+            border-radius: 10px;
+            margin-left: 55px;
+            margin-top: 50px;
+            font-size: 15px;
+        }
+
+        #register-btn{
+            background-color: black;
+            color: #fff;
+            width: 304px;
+            height: 45px;
+            border-radius: 10px;
+            margin-left: 55px;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        #login-btn:hover{
+            background-color: #e2e8f0;
+            color: black;
+        }
+
+        #register-btn:hover{
+            background-color: #e2e8f0;
+            color: black;
+        }
+
+        /* Pop-up effect */
+        @keyframes popUp {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0); /* Black w/ opacity */
+            margin-left: -20px;
+            margin-top: -70px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #modalmessage {
+            font-size: 25px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #loginmessage {
+            font-size: 25px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-box">
+        <p id="name">OnTheDot</p>
+        <p id="login">Login</p>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-btn" onclick="showLoginModal()">Login</button>
+        <button id="register-btn" onclick="showRegisterModal()">Register</button>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <p id="loginmessage">Login Successful!</p>
+            <button onclick="location.href='homepage.html'">Go to Homepage</button>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <p id="modalmessage">Registration Successful!</p>
+            <button onclick="location.href='Homepage.html'">Go to Homepage</button>
+        </div>
+    </div>
+
+    <script>
+        // Show Login Modal
+        function showLoginModal() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if (username === "" || password === "") {
+                alert("Please fill in the details.");
+            } else {
+                var modal = document.getElementById("loginModal");
+                modal.style.display = "block";
+            }
+        }
+
+        // Show Register Modal
+        function showRegisterModal() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if (username === "" || password === "") {
+                alert("Please fill in the details.");
+            } else {
+                var modal = document.getElementById("registerModal");
+                modal.style.display = "block";
+            }
+        }
+
+        // Close Modal
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        // Close modal if clicked outside the modal content
+        window.onclick = function(event) {
+            var loginModal = document.getElementById("loginModal");
+            var registerModal = document.getElementById("registerModal");
+            if (event.target == loginModal) {
+                loginModal.style.display = "none";
+            }
+            if (event.target == registerModal) {
+                registerModal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

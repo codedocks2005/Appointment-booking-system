@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="booking.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+</head>
+<body>
+    <header>
+        <ul id="appointmentList"></ul>
+        <div class="nav">          
+            <img src="final1-removebg-preview.png" alt="logo">
+            <button id="home" onclick="location.href='Homepage.html'">Home</button>
+            <button id="login" onclick="location.href='loginpage.html'">Login</button>
+            <button id="dashboard" onclick="location.href='Dashboard.html'">Dashboard</button>
+            <button id="booking">Booking</button>
+            <button id="payment">Payment</button>
+            <button id="contact1">Contact</button>
+        </div>
+    </header>
+
+    <div id="mainbox1">
+        <h2>Select Services:</h2>
+        <label><input type="radio" name="service" value="Clinic"> Clinic</label><br>
+        <label><input type="radio" name="service" value="Haircut"> Haircut</label><br>
+        <label><input type="radio" name="service" value="Spa"> Spa</label><br>
+        <label><input type="radio" name="service" value="Eye checkup"> Eye checkup</label><br>
+    </div>
+     
+    <div id="mainbox2">
+        <h2>Select Date: </h2>
+        <div id="calendar"></div>
+    </div>
+
+    <div id="mainbox3">
+        <h2>Select Time :</h2>
+        <input type="time" id="time" name="time">
+    </div>
+
+    <div id="mainbox4">
+        <h2>Select Provider: </h2>
+        <div class="optionss">
+            <select id="options1">
+                <option value="Clinic providers">Clinic providers</option>
+                <option value="Dr.James">Dr.James</option>
+                <option value="Dr.John">Dr.John</option>
+                <option value="Dr.Smith">Dr.Smith</option>
+                <option value="None">None</option>
+            </select>
+
+            <select id="options2">
+                <option value="Tony Haircuts">Tony Haircuts</option>
+                <option value="Superior Salon">Superior Salon</option>
+                <option value="Side Cuts">Side Cuts</option>
+                <option value="None">None</option>
+            </select>
+
+            <select id="options3">
+                <option value="Tranquil Retreat Spa">Tranquil Retreat Spa</option>
+                <option value="Serenity Wellness Spa">Serenity Wellness Spa</option>
+                <option value="Pure Indulgence Spa">Pure Indulgence Spa</option>
+                <option value="None">None</option>
+            </select>
+
+            <select id="options4">
+                <option value="Oasis Eye Hospital">Oasis Eye Hospital</option>
+                <option value="Vision Plus Eye Center">Vision Plus Eye Center</option>
+                <option value="Elite Eye Care">Elite Eye Care</option>
+                <option value="None">None</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="confirm-button">
+        <button id="confirm" onclick="bookappointment()">Confirm Appointment</button>
+    </div>
+
+    <div id="response"></div>
+
+    <footer>
+        <div id="foot-box">
+            <p id="copyright">Copyright &copy; 2023 - All Rights Reserved -
+                <a href="#" style="color: whitesmoke;">Terms and Conditions</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let selectedDate = null;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                selectable: true,
+                headerToolbar: {
+                    start: 'prev,next today',
+                    center: 'title',
+                    end: 'dayGridMonth,timeGridWeek,timeGridDay',
+                },
+                height: 400,
+                dateClick: function (info) {
+                    selectedDate = info.dateStr;
+                    alert("Selected Date: " + selectedDate);
+                }
+            });
+
+            calendar.render();
+        });
+
+        function bookappointment() {
+            let serviceElement = document.querySelector('input[name="service"]:checked');
+            if (!serviceElement) {
+                alert("Please select a service!");
+                return;
+            }
+            let service = serviceElement.value;
+
+            if (!selectedDate) {
+                alert("Please select a date from the calendar!");
+                return;
+            }
+
+            let time = document.getElementById("time").value;
+            if (!time) {
+                alert("Please select a time!");
+                return;
+            }
+
+            let provider;
+            switch (service) {
+                case "Clinic":
+                    provider = document.getElementById("options1").value;
+                    break;
+                case "Haircut":
+                    provider = document.getElementById("options2").value;
+                    break;
+                case "Spa":
+                    provider = document.getElementById("options3").value;
+                    break;
+                case "Eye checkup":
+                    provider = document.getElementById("options4").value;
+                    break;
+                default:
+                    provider = "Unknown Provider";
+            }
+
+            const appointment = {
+                service: service,
+                date: selectedDate,
+                time: time,
+                provider: provider
+            };
+
+            fetch('http://localhost:5001/Confirm Appointment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(appointment)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").innerText = data.message;
+                // fetchAppointments(); // Uncomment if you have this function defined
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>

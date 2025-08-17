@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appointmentApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Appointment Booking</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .appointment-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; background: #fff; border-radius: 5px; }
+        .btn { padding: 8px 12px; border: none; cursor: pointer; border-radius: 5px; color: white; }
+        .btn-available { background-color: gray; }
+        .btn-booked { background-color: #dc3545; cursor: not-allowed; }
+        .input-field { padding: 8px; width: 100%; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    </style>
+</head>
+<body ng-controller="AppointmentController">
+
+    <div class="container">
+        <h2>Book Your Appointment</h2>
+
+
+        <input type="text" class="input-field" placeholder="Search appointments..." ng-model="searchQuery" ng-focus="focused=true" ng-blur="focused=false">    <!--for seraching the wue-->
+        
+        <label Sort By:</label>
+        <select ng-model="sortType">
+            <option value="name">Name</option>
+            <option value="date">Date</option>
+            <option value="fee">Fee</option>
+        </select>
+
+        <div class="appointment-card" ng-repeat="appointment in appointments | filter:searchQuery | orderBy:sortType">   <!--orderby is used for sorting-->
+            <h3>{{ appointment.name | uppercase }}</h3>  <!--Appointment name -->
+            <p><strong>Doctor:</strong> {{ appointment.doctor }}</p>
+            <p><strong>Date:</strong> {{ appointment.date | date:'fullDate' }} | <strong>Time:</strong> {{ appointment.time }}</p>   <!--Display date -->
+            <p><strong>Fee:</strong> {{ appointment.fee | currency:"₹" }}</p>    <!--in rupess -->
+            
+            <button ng-click="bookAppointment(appointment)" 
+                    class="btn" 
+                    ng-class="appointment.available ? 'btn-available' : 'btn-booked'"
+                    ng-disabled="!appointment.available">
+                {{ appointment.available ? 'Book Now' : 'Booked' }}
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        var app = angular.module("appointmentApp", []);
+
+        app.controller("AppointmentController", function ($scope, $http) {
+            $scope.appointments = [];
+            $scope.sortType = 'name'; // Default sorting by name
+
+
+            $http.get("appointment1.json").then(function (response) {
+                $scope.appointments = response.data.appointments;
+                $scope.$broadcast('dataLoaded', $scope.appointments); // Broadcast event when data loads
+            });
+
+
+            $scope.bookAppointment = function (appointment) {
+                if (appointment.available) {
+                    appointment.available = false; 
+                    alert("Appointment booked successfully!");
+                    $scope.$emit('appointmentBooked', appointment); 
+                }
+            };
+
+            // Watch for changes in the appointments list
+            $scope.$watch('appointments', function (newVal, oldVal) {
+                if (newVal !== oldVal) {
+                    console.log("Appointments updated!");
+                }
+            }, true);
+
+            // Listen for broadcasted event
+            $scope.$on('dataLoaded', function (event, data) {
+                console.log("Data Loaded:", data);
+            });
+
+            // Listen for booking event
+            $scope.$on('appointmentBooked', function(event, appointment) {
+                console.log("Appointment Booked:", appointment);
+            });
+
+        });
+    </script>
+
+</body>
+</html>

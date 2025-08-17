@@ -1,0 +1,87 @@
+{
+    "appointments": [
+      {
+        "name": "General Checkup",
+        "doctor": "Dr. Aman Verma",
+        "date": "2025-03-15",
+        "time": "10:00 AM",
+        "fee": 500,
+        "available": true
+      },
+      {
+        "name": "Dental Cleaning",
+        "doctor": "Dr. Priya Sharma",
+        "date": "2025-03-16",
+        "time": "11:30 AM",
+        "fee": 800,
+        "available": true
+      },
+      {
+        "name": "Eye Examination",
+        "doctor": "Dr. Ramesh Rao",
+        "date": "2025-03-17",
+        "time": "2:00 PM",
+        "fee": 600,
+        "available": false
+      },
+      {
+        "name": "Cardiology Consultation",
+        "doctor": "Dr. Meena Kapoor",
+        "date": "2025-03-18",
+        "time": "3:00 PM",
+        "fee": 1200,
+        "available": true
+      },
+      {
+        "name": "Physiotherapy Session",
+        "doctor": "Dr. Vikram Desai",
+        "date": "2025-03-19",
+        "time": "4:30 PM",
+        "fee": 700,
+        "available": true
+      },
+      {
+        "name": "Skin Allergy Test",
+        "doctor": "Dr. Nisha Khanna",
+        "date": "2025-03-20",
+        "time": "5:00 PM",
+        "fee": 900,
+        "available": false
+      },
+      {
+        "name": "Orthopedic Consultation",
+        "doctor": "Dr. Rahul Menon",
+        "date": "2025-03-21",
+        "time": "6:30 PM",
+        "fee": 1000,
+        "available": true
+      },
+      {
+        "name": "Nutrition Counseling",
+        "doctor": "Dr. Sneha Patil",
+        "date": "2025-03-22",
+        "time": "8:00 AM",
+        "fee": 600,
+        "available": true
+      },
+      {
+        "name": "ENT Checkup",
+        "doctor": "Dr. Anil Kumar",
+        "date": "2025-03-23",
+        "time": "9:00 AM",
+        "fee": 750,
+        "available": false
+      },
+      {
+        "name": "Pediatric Checkup",
+        "doctor": "Dr. Kavita Iyer",
+        "date": "2025-03-24",
+        "time": "10:30 AM",
+        "fee": 500,
+        "available": true
+      }
+    ]
+  }
+
+  
+  

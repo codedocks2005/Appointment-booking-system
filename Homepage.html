@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnTheDot Appointment</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+
+    <style>
+
+    @keyframes typing {
+        0% { width: 0; }
+        100% { width: 0; }
+        50% { width: 100%; }
+    }
+    
+      @keyframes blink {
+        50% { border-color: black; }
+      }
+      
+      .typewriter {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 1px solid #efefef;
+        white-space: nowrap;
+        font-family: sans-serif;
+        font-size: 30px;
+        animation: typing 10s steps(10, end) infinite,  0.5s step-end ;
+      }
+      
+        /* Carousel Container */
+        #center-box {
+            height: 470px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            border-color: #e5e7eb;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Title Text */
+        #text1 h2 {
+            text-align: center;
+            color: #030303;
+            font-size: 32px;
+            margin-top: 50px;
+            padding-top: 70px;
+        }
+
+        /* Carousel Inner (container for the boxes) */
+        #boxes {
+            display: flex;
+            flex-direction: row;
+            transition: transform 0.5s ease;
+        }
+
+        /* Carousel Items (individual service boxes) */
+        .carousel-item {
+            height: 270px;
+            width: 422px;
+            background-color: #efefef;
+            border-radius: 40px;
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            cursor: pointer;
+            padding-left: -20px;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        .carousel-item:hover{
+          transform: scale(0.9);
+          transition: transform 0.3s ;
+        }
+        /* Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 70%;
+            transform: translateY(-50%);
+            background-color: grey;
+            color: black;
+            border: none;
+            border-radius: 15px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 100;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Photo gallery */
+       
+        #photogallery {
+            text-align: center;
+            padding: 20px;
+            color: #333;
+            margin-top: 100px;
+            background-color: #efefef;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 100px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 100px;
+          
+        }
+        .gallery img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 16px black;
+        }
+
+      </style>
+
+</head>
+<body>
+<header>
+    <nav class="nav">          
+    <img src="final1-removebg-preview.png" alt="final1-removebg-preview.png">
+
+    <button id="home" onclick="location.href='Homepage.html'">Home</button>
+    <button id="login" onclick="location.href='loginpage.html'">Login</button>
+    <button id="dashboard" onclick="location.href='Dashboard.html'">Dashboard</button>
+    <button id="booking" onclick="location.href='booking.html'">Booking</button>
+
+    <button id="payment"  onclick="location.href='payment.html'">Payment</button>
+    <button id="contact1" onclick="location.href='contact.html'">Contact</button>
+
+    </nav>
+</header>
+
+<main>
+
+<section id="small-box">
+   
+          <h1 class="typewriter">Book your Appointment Easily . . . </h1>
+          <h3>Streamline your Appointment scheduling with OnTheDot, offering  you a seamless experience .... </h3>
+
+          <input type="button" value="Get Started" id="get-started" onclick="location.href='loginpage.html'">
+</section>
+
+
+<main>
+<div id="center-box">
+  <div id="text1">
+      <h2>Featured Services</h2>
+  </div>
+
+  <div id="boxes">
+      <div class="carousel-item" onclick="location.href='Dashboard.html'" >
+          <img src="Haircut.jpg" alt="Haircut">
+          <p id="haircut">Haircuts</p>
+          <p id="desc1" style="margin-left: -40px;">Get a stylish haircut from our experienced stylists.</p>
+      </div>
+
+      <div class="carousel-item" onclick="location.href='Dashboard.html'">
+          <img src="Spa treatment .jpg" alt="Spa">
+          <p id="spa">Spa Treatments</p>
+          <p id="desc2" style="margin-right: 23px;">Relax and rejuvenate with our premium spa treatments.</p>
+      </div>
+
+      <div class="carousel-item" onclick="location.href='Dashboard.html'">
+          <img src="Doctor.jpg" alt="Doctor">
+          <p id="checkup">Check-ups</p>
+          <p id="desc3" >Get personalized treatment from expert hands</p>
+      </div>
+  </div>
+
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+</main>
+
+
+
+<h1 id="photogallery">Photo Gallery</h1>
+    <div class="gallery">
+    <img src="images/galler5.avif" alt="">
+        <img src="images/gallery2.avif" alt="image2">
+        <img src="images/gallery3.jpg" alt="image3">
+        <img src="images/gallery4.jpg" alt="image4">
+        <img src="images/galler5.avif" alt="image5">
+        <img src="images/gallery6.jpg" alt="image6">
+        <img src="images/gallery7.avif" alt="image7">
+        <img src="images/gallery9.avif" alt="image9">
+        <img src="images/gallery10.avif" alt="image10">
+        <img src="images/gallery11.avif" alt="image11">
+        <img src="images/gallery12.webp" alt="image12">
+        <img src="images/gallery13.webp" alt="image13">
+
+    </div>
+<footer>
+    <div class="foot-box">
+
+ <div id="contact">
+    <p>Contact Us</p>
+    <p>Email : onthedot@gmail.com</p>
+    <p>Phone:12346789</p>
+    </div>
+
+    <div id="social">
+        <p>Follow us</p>
+        <div id="icons">
+            <i class="fa-brands fa-instagram" id="instagram"></i>
+            <i class="fa-brands fa-twitter" id="twitter"></i>
+            <i class="fa-brands fa-facebook" id="facebook"></i>
+</div>
+</div>
+
+
+
+      <div class="navigate">
+        <p>Navigate</p>
+        <p>Privacy policy</p>
+        <p>Terms and conditions</p>
+    
+     </div>
+    
+
+   
+
+
+
+ </div>
+
+ 
+
+    
+
+
+</footer>
+<script>
+  let currentIndex = 0;
+
+  // Function to move slides
+  function moveSlide(step) {
+      const slides = document.querySelectorAll('.carousel-item');
+      const totalSlides = slides.length;
+      currentIndex += step;
+
+      if (currentIndex < 0) currentIndex = totalSlides - 1;
+      if (currentIndex >= totalSlides) currentIndex = 0;
+
+      const carousel = document.querySelector('#boxes');
+      carousel.style.transform = `translateX(${-currentIndex * 462}px)`; // Adjust slide width
+  }
+</script>
+
+
+  
+  
+
+
+  
+    
+</body>
+</html>

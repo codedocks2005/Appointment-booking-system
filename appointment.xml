@@ -1,0 +1,23 @@
+<?xml version = '1.0?>
+<class>
+<appointment id = '101'>
+   <firstname>Darshan</firstname>
+   <lastname>prajapath</lastname>
+   <amount>5000</amount>
+</appointment>
+<appointment id = '102'>
+   <firstname>don</firstname>
+   <lastname>bosco</lastname>
+   <amount>4000</amount>
+</appointment>
+<appointment id = '103'>
+   <firstname>Akshay</firstname>
+   <lastname>kumar</lastname>
+   <amount>6000</amount>
+</appointment>
+<appointment id = '104'>
+   <firstname>Amitabh</firstname>
+   <lastname>Bachan</lastname>
+   <amount>8000</amount>
+</appointment>
+</class> 

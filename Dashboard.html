@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Dashboard.css">
+    <title>Dashboard</title>
+<style>
+    body{
+    margin: 0;
+}
+
+
+.nav{
+    background-color: black;
+    height: 70px;
+    width: 1440px;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+.nav img{
+    background-color: black;
+    height: 70px;
+    width: 90px;
+    padding-left: 550px;
+}
+.nav p{
+    color: white;
+    padding-bottom: 100px;
+    font-size: 35px;
+   margin-top: -55px;
+    padding-left: 640px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#side-bar{
+    background-color: #efefef;
+    width: 300px;
+    height: 836px;
+}
+button{
+    height: 36px;
+    width: 218px;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: #efefef;
+    border: none;
+    font-size: large;
+    font-weight: 400;
+}
+button:hover{
+    background-color: #000000;
+    color: white;
+    border-radius: 15px;
+}
+
+
+#mainbox1{
+    background-color: #efefef;
+    width: 1070px;
+    height: 188px;
+    margin-top: -800px;
+    margin-left: 320px;
+    border-radius: 15px;
+  
+}
+#mainbox2{
+    background-color: #efefef;
+    width: 1070px;
+    height: 188px;
+    margin-top: 80px;
+    margin-left: 320px;
+    border-radius: 15px;
+}
+#mainbox3{
+    background-color: #efefef;
+    width: 1070px;
+    height: 188px;
+    margin-top: 50px;
+    margin-left: 320px;
+    border-radius: 15px;
+}
+#UA{
+    margin-left: 20px;
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: 700;
+
+}
+
+#box1{
+    width: 340px;
+    height: 96px;
+    background-color: white;
+    margin-left: 20px;
+    margin-bottom: -90px;
+    border-radius: 10px;
+}
+#box2{
+    width: 340px;
+    height: 96px;
+    background-color: white;
+    margin-left: 370px;
+    margin-top: -115px;
+    border-radius: 10px;
+    align-items: center;
+    
+}
+#box3{
+    width: 340px;
+    height: 96px;
+    background-color: white;
+    margin-left: 720px;
+    margin-top: -115px;
+    border-radius: 10px;
+}
+
+#box1 p{
+    margin-left: 20px;
+    margin-top: 10px;
+   
+    height: 10px;
+}
+#maintxt{
+    font-size: 18px;
+    font-weight: 400;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+#maintxt2{
+    font-size: 18px;
+    font-weight: 400;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+#p1{
+    margin-left: 10px;
+    margin-top: -10px;
+}
+#p2{
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+#maintxt3{
+    font-size: 18px;
+    font-weight: 400;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+   
+#RA{
+    font-size: 30px;
+    font-weight: 400;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+#a1{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: -5px;
+    padding-bottom: 5px;
+}
+#a2{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: -5px;
+    padding-bottom: 5px;
+}
+#a3{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: -6px;
+    padding-bottom: 5px;
+}
+
+#QL{
+   font-size: 30px;
+   font-weight: 400;
+   margin-left: 20px;
+   padding-top: 20px;
+}
+
+
+#last1{
+    background-color: black;
+    color: #efefef;
+    width: 310px;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+#last2{
+    background-color: black;
+    color: #efefef;
+    width: 310px;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+#last3{
+    background-color: black;
+    color: #efefef;
+    width:310px;
+height: 40px;
+margin-right: 20px;
+border-radius: 10px;
+}
+
+
+</style>
+</head>
+<body>
+   
+<header>
+    <div class="nav">
+        <img src="final1-removebg-preview.png" alt="final1-removebg-preview.png">
+      <p>OnTheDot</p>
+        </div>
+
+</header>
+
+<div id="side-bar">
+    <button onclick="location.href='homepage.html'">Home</button>
+    <button onclick="location.href='loginpage.html'">Login</button>
+    <button onclick="location.href='Dashboard.html'">Dashboard</button>
+    <button onclick="location.href='booking.html'">Booking</button>
+  
+    <button onclick="location.href='payment.html'">Payment</button>
+    <button onclick="location.href='contact.html'">Contact</button>
+
+</div>
+    
+
+<div id="mainbox1">
+    <p id="UA" onclick="location.href='hello.html'">Upcoming Appointments</p>
+    <div id="box1">
+        <p id="maintxt">Appointment with Dr Smith</p>
+        <p>Date : 30 Nov 2024</p>
+        <p>Time : 2:30 PM</p>
+
+    </div>
+    <div id="box2">
+        <p id="maintxt2">Meeting with project team</p>
+        <p id="p1">Date : 3 Dec 2024</p>
+        <p id="p2">Time : 10:00 AM</p>
+    </div>
+    <div id="box3">
+        <p id="maintxt3">Consultation with John Doe</p>
+        <p id="p1">Date : 5 Dec 2024</p>
+        <p id="p2">Time : 11:00 AM </p>
+
+    </div>
+
+
+</div>
+
+<div id="mainbox2">
+    <p id="RA">Recent Activities</p>
+    <p id="a1">Long in from a new device</p>
+    <p id="a2">Updated profile information</p>
+    <p id="a3">Booked an appointment with Dr.Smith</p>
+    </div>
+
+    <div id="mainbox3">
+    <p id="QL">Quick Links </p>
+
+    <button id="last1" onclick="location.href='booking.html'">New Booking</button>
+    <button id="last2">View History</button>
+    <button id="last3" onclick="location.href='contact.html'">Contact Support</button>
+    </div>
+
+    <script>
+
+  async function loadAppointments() {
+      const response = await fetch('http://localhost:5001/appointments'); // Updated port
+      const data = await response.text();
+      document.getElementById("appointments-list").innerText = data;
+  }
+
+  window.onload = loadAppointments;
+</script>
+
+
+
+
+    </script>
+
+</body>
+</html>

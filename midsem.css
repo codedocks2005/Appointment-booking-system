@@ -1,0 +1,75 @@
+@media screen and (max-width: 600px) {
+    body {
+      background-color: lightgray;
+    }
+  }
+
+  nav{
+    position: sticky;
+    top:0%;
+   background-color: gray;
+
+  }
+  ul{
+    display: flex;
+    gap: 30px;
+    
+  }
+  .bakery-menu{
+    height: 500px;
+    width: 1450px;
+    background-color: gray;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+  }
+  #cakes{
+   height: 200px;
+   width: 300px;
+   border-radius: 20px;
+   background-color: aqua;
+   margin-left: 30px;
+   text-decoration: double;
+   margin-top: -200px;
+   
+
+  }
+
+  img{
+    height: 80px;
+    width: 80px;
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+  h2{
+   margin-top: 2%;
+   margin-left: 10%;
+  }
+  h3{
+    margin-top: 1%;
+   margin-left: 10%;
+  }
+ 
+  .slideshow{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+
+  }
+
+  .slide{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    animation: slideshow  2s infinite ;
+  }
+  @keyframes slideshow {
+    0% { opacity: 1;}
+    33% { opacity: 1;}
+    66% { opacity: 1;}
+    
+  }
+  
